@@ -1,0 +1,40 @@
+void main() {
+  var c = Num(
+    add: () {
+      Num.x += 1;
+    },
+    sub: () {
+      if (Num.x > 0) {
+        Num.x = 1;
+      } else {
+        Num.x = 0;
+      }
+    },
+  );        
+
+  c.pr();
+
+  c.add();
+
+  c.pr();
+
+  c.sub();
+
+  c.sub();
+
+  c.pr();
+}
+
+class Num {
+  static int x = 0;
+
+  final Function add;
+
+  final Function sub;
+
+  Num({required this.add, required this.sub});
+
+  pr() {
+    print(x);
+  }
+}
